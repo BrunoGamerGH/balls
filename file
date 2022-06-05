@@ -1,0 +1,40 @@
+
+
+
+
+
+    }
+
+
+    public void spawnPhil(Player p) {
+
+        CraftPlayer player = (CraftPlayer) p;
+
+
+
+
+        ServerPlayer npc = getBukkitEntity().getHandle();
+
+
+
+        npc.setPos(p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ());
+
+
+
+
+        ServerGamePacketListenerImpl ps = player.getHandle().connection;
+        ps.send(new ClientboundPlayerInfoPacket(ClientboundPlayerInfoPacket.Action.ADD_PLAYER, npc));
+        ps.send(new ClientboundAddPlayerPacket(npc));
+        ps.send(new ClientboundSetEntityDataPacket(npc.getId(),npc.getEntityData(), true));
+
+        p.sendMessage("poggers");
+        this.phil = npc;
+        phil.setNoGravity(false);
+
+    }
+
+    public int getID() {
+        return (phil == null) ? 0 : phil.getId();
+    }
+
+}
