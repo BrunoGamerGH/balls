@@ -76,3 +76,4 @@
                     } else if (spigotPlayer.isFlying()) {
                         velocity[0] = (velocity[0] * slipperinessMultiplier[0] + 0.91) + (0.02 * movementMultiplier[0]);
                     }
+                        // Among Us ඞ
