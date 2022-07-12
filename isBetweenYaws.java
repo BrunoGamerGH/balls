@@ -1,5 +1,6 @@
     public boolean isBetweenYaws(float bodyYaw, float yaw1, float yaw2) {
         // check if its +/+ or -/-
+        // if it isnt, check if its +/- or -/+
         if (yaw1 >= 0 && yaw2 >=0) {
             // its +/+
             if (yaw1 > yaw2) {
